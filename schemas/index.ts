@@ -2,6 +2,7 @@
 import {SchemaTypeDefinition, Template} from 'sanity'
 
 import article from './article'
+import hierarchicalSchema from './hierarchicalSchema'
 import newsletter from './newsletter'
 import articleReference from './objects/articleReference'
 import articleReferences from './objects/articleReferences'
@@ -51,6 +52,7 @@ export const schemaTypes = (
     podcast,
     section,
     siteSettings,
+    hierarchicalSchema,
   ].map((def: SchemaTypeDefinition<any>) => {
     if (schemaTypesToFilterBrandOn.includes(def?.name)) {
       return {

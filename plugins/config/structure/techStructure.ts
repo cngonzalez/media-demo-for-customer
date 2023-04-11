@@ -1,3 +1,4 @@
+import {createDeskHierarchy} from '@practical-js/sanity-hierarchical-docs'
 import {Role} from 'sanity'
 import {StructureResolver} from 'sanity/desk'
 import article from 'schemas/article'
@@ -18,6 +19,14 @@ export const techStructure: StructureResolver = (S, context) => {
 
   const adminItems = [
     createSiteSettingsNodeForBrand(S, 'tech'),
+    createDeskHierarchy({
+      S,
+      context,
+      title: 'Section hierarchy',
+      documentId: 'new-section',
+      documentType: 'sectionTree',
+      referenceTo: ['section'],
+    }),
     S.divider(),
     createSchemaItemForBrand(S, article, 'tech'),
     createSchemaItemForBrand(S, newsletter, 'tech'),
